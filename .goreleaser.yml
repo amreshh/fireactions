@@ -11,7 +11,7 @@ builds:
       - linux
     goarch:
       - amd64
-      - arm64
+      # - arm64
     ldflags:
       - -X github.com/hostinger/fireactions.Version={{ .Version }}
       - -X github.com/hostinger/fireactions.Commit={{ .ShortCommit }}
@@ -36,27 +36,27 @@ dockers:
       - "--pull"
       - "--platform=linux/amd64"
     goarch: amd64
-  - id: fireactions-arm64
-    use: buildx
-    dockerfile: Dockerfile
-    image_templates:
-      - ghrc.io/amreshh/fireactions:{{ .Version }}-arm64
-    extra_files:
-      - "./"
-    build_flag_templates:
-      - "--pull"
-      - "--platform=linux/arm64"
-    goarch: arm64
+  # - id: fireactions-arm64
+  #   use: buildx
+  #   dockerfile: Dockerfile
+  #   image_templates:
+  #     - ghrc.io/amreshh/fireactions:{{ .Version }}-arm64
+  #   extra_files:
+  #     - "./"
+  #   build_flag_templates:
+  #     - "--pull"
+  #     - "--platform=linux/arm64"
+  #   goarch: arm64
 
 docker_manifests:
   - name_template: ghrc.io/amreshh/fireactions:{{ .Version }}
     image_templates:
       - ghrc.io/amreshh/fireactions:{{ .Version }}-amd64
-      - ghrc.io/amreshh/fireactions:{{ .Version }}-arm64
+      # - ghrc.io/amreshh/fireactions:{{ .Version }}-arm64
   - name_template: ghrc.io/amreshh/fireactions:latest
     image_templates:
       - ghrc.io/amreshh/fireactions:{{ .Version }}-amd64
-      - ghrc.io/amreshh/fireactions:{{ .Version }}-arm64
+      # - ghrc.io/amreshh/fireactions:{{ .Version }}-arm64
 
 # Changelog is managed by release-please
 changelog:
