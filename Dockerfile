@@ -13,7 +13,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && chown fireactions:fireactions /usr/bin/fireactions        \
     && chmod 755 /usr/bin/fireactions
 
-ADD cert.crt /usr/local/share/ca-certificates
+ADD cert1.crt /usr/local/share/ca-certificates/cert1.crt
+ADD cert2.crt /usr/local/share/ca-certificates/cert2.crt
+ADD cert3.crt /usr/local/share/ca-certificates/cert3.crt
+
+RUN "echo '10.227.19.148 github-nonprod-az.onead.schipholgroupcloud.nl' >> /etc/hosts"
+
 RUN update-ca-certificates
 
 EXPOSE 8080
