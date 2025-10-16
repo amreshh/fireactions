@@ -1,0 +1,58 @@
+site_name: "Fireactions"
+repo_name: "hostinger/fireactions"
+repo_url: https://github.com/hostinger/fireactions
+site_url: https://hostinger.github.io/fireactions/
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  logo: img/banner_white.png
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.sections
+  palette:
+    primary: violet
+  include_sidebar: true
+
+extra_css:
+  - css/extra.css
+
+nav:
+  - Home:
+      - Overview: "index.md"
+  - User Guide:
+      - Intro: "user-guide/index.md"
+      - Configuration: "user-guide/configuration.md"
+      - Concepts: "user-guide/concepts.md"
+      - Installation: "user-guide/installation.md"
+      - Running the first build: "user-guide/running-the-first-build.md"
+      - Images: "user-guide/images.md"
+      - Kernels: "user-guide/kernels.md"
+      - Monitoring: "user-guide/monitoring.md"
+      - Troubleshooting: "user-guide/troubleshooting.md"
+      - Upgrading: "user-guide/upgrading.md"
+      - Support Matrix: "user-guide/support-matrix.md"
+  - API Guide: "api/index.md"
+  - SDK Guide: "sdk/index.md"
+  - CLI Guide: "cli/index.md"
+  - Examples:
+      - Creating custom image for Firecracker VMs: "examples/custom-image.md"
+      - Setting up a Docker registry mirror: "examples/docker-registry-mirror.md"
+      - Debugging workflows: "examples/debugging-workflows.md"
+  - FAQ: "faq.md"
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - admonition
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+  - pymdownx.emoji
+  - pymdownx.magiclink
