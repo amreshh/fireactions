@@ -40,7 +40,7 @@ dockers:
     use: buildx
     dockerfile: Dockerfile
     image_templates:
-      - ghc.io/amreshh/fireactions:{{ .Version }}-arm64
+      - ghrc.io/amreshh/fireactions:{{ .Version }}-arm64
     extra_files:
       - "./"
     build_flag_templates:
@@ -49,14 +49,14 @@ dockers:
     goarch: arm64
 
 docker_manifests:
-  - name_template: ghc.io/amreshh/fireactions:{{ .Version }}
+  - name_template: ghrc.io/amreshh/fireactions:{{ .Version }}
     image_templates:
-      - ghc.io/amreshh/fireactions:{{ .Version }}-amd64
-      - ghc.io/amreshh/fireactions:{{ .Version }}-arm64
-  - name_template: ghc.io/amreshh/fireactions:latest
+      - ghrc.io/amreshh/fireactions:{{ .Version }}-amd64
+      - ghrc.io/amreshh/fireactions:{{ .Version }}-arm64
+  - name_template: ghrc.io/amreshh/fireactions:latest
     image_templates:
-      - ghc.io/amreshh/fireactions:{{ .Version }}-amd64
-      - ghc.io/amreshh/fireactions:{{ .Version }}-arm64
+      - ghrc.io/amreshh/fireactions:{{ .Version }}-amd64
+      - ghrc.io/amreshh/fireactions:{{ .Version }}-arm64
 
 # Changelog is managed by release-please
 changelog:
