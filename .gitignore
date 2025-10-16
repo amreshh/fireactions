@@ -7,7 +7,7 @@
 *.dll
 *.so
 *.dylib
-fireactions
+#fireactions
 
 # Test binary, built with `go test -c`
 *.test
